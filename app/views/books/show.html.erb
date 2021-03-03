@@ -43,8 +43,8 @@
               <%= comment.user.name %>
             <% end %></td>
             <td><%= comment.comment %></td>
-                <td><% if @book_comment.user_id == current_user %>
-                <%= link_to "削除", book_book_comment_path(book_comment.book, book_comment), method: :delete %><% end %></td>
+                <td><% if comment.user == current_user %>
+                <%= link_to "削除", book_book_comment_path(@book, comment), method: :delete %><% end %></td>
             </tr>
           <% end %>
         </table>
