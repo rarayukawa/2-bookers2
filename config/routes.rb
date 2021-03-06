@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/search'
   root to: 'homes#top'
   get 'home/about' => 'homes#about'
 
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'users/:user_id/follows' => 'relationships#follows', as: 'follows'
   get 'users/:user_id/followers' => 'relationships#followers', as: 'followers'
+  get '/search' => 'search#search'
 
   resources :users,only: [:show,:index,:edit,:update] do
     resource :relationships, only: [:destroy, :create]
