@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+    @favorites = Favorite.where(user_id: current_user)
   end
 
   def create
@@ -52,7 +53,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  
+
   private
 
   def book_params

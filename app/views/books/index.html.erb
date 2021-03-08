@@ -17,7 +17,9 @@
     <div class='col-md-8 offset-md-1'>
 
       <h2>Books</h2>
+      <tr class="book_<%= @book.id %>">
       <%= render 'index', books: @books %>
+      </tr>
     </div>
   </div>
 </div>

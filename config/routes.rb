@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'users/:user_id/follows' => 'relationships#follows', as: 'follows'
   get 'users/:user_id/followers' => 'relationships#followers', as: 'followers'
   get '/search' => 'search#search'
-  # post 'favorite/:id' => 'favorites#create', as: 'create_favorite'
-  # delete 'favorite/:id' => 'favorites#destroy', as: 'destroy_favorite'
+  post 'favorite/:id' => 'favorites#create', as: 'create_favorite'
+  delete 'favorite/:id' => 'favorites#destroy', as: 'destroy_favorite'
 
   resources :users,only: [:show,:index,:edit,:update] do
     resource :relationships, only: [:destroy, :create]
