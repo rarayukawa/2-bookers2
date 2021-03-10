@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_065703) do
+ActiveRecord::Schema.define(version: 2021_03_10_014842) do
 
   create_table "book_comments", force: :cascade do |t|
     t.text "comment"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_065703) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "postcode"
-    t.integer "prefenture_code"
+    t.integer "prefecture_code"
     t.string "address_city"
     t.string "address_street"
     t.string "address_building"
